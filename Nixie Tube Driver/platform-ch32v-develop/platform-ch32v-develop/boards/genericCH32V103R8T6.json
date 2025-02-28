@@ -1,0 +1,51 @@
+{
+  "build": {
+    "arduino": {
+      "openwch": {
+        "variant": "CH32V10x/CH32V103R8T6",
+        "variant_h": "variant_CH32V103R8T6.h"
+      }
+    },
+    "core": "openwch",
+    "extra_flags": "-DCH32V10x_3V3 -DCH32V103R8 -DCH32V10X -DCH32V103",
+    "f_cpu": "72000000L",
+    "hwids": [
+      [
+        "0x1A86",
+        "0x8010"
+      ]
+    ],
+    "mabi": "ilp32",
+    "march": "rv32imac",
+    "mcu": "ch32v103r8t6",
+    "series": "ch32v103"
+  },
+  "debug": {
+    "onboard_tools": [
+      "wch-link"
+    ],
+    "openocd_config": "wch-riscv.cfg",
+    "svd_path": "CH32V103xx.svd"
+  },
+  "frameworks": [
+    "noneos-sdk",
+    "freertos",
+    "harmony-liteos",
+    "rt-thread",
+    "tencent-os",
+    "arduino"
+  ],
+  "name": "Generic CH32V103R8T6",
+  "upload": {
+    "maximum_ram_size": 20480,
+    "maximum_size": 65536,
+    "protocol": "wch-link",
+    "protocols": [
+      "wch-link",
+      "minichlink",
+      "isp"
+    ]
+  },
+  "url": "http://www.wch-ic.com/products/CH32V103.html",
+  "vendor": "W.CH"
+}

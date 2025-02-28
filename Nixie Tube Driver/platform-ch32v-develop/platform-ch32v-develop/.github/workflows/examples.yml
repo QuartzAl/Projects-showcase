@@ -1,0 +1,49 @@
+name: Examples
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        example:
+          - "examples/adc-cpu-temp-none-os"
+          - "examples/blinky-arduino"
+          - "examples/blinky-arduino-ch32v003"
+          - "examples/blinky-arduino-ch32v307"
+          - "examples/blinky-none-os"
+          - "examples/blinky-none-os-ch5xx"
+          - "examples/uart-printf-none-os"
+          - "examples/webserver-ch32v307-none-os"
+          - "examples/blinky-freertos"
+          - "examples/blinky-freertos-ch58x"
+          - "examples/hello-world-harmony-liteos"
+          - "examples/hello-world-rt-thread"
+          - "examples/hello-world-rt-thread-ch5xx"
+          - "examples/hello-world-tencent-os"
+          - "examples/blinky-cpp-none-os"
+          - "examples/baremetal-ch32v003"
+          - "examples/usb-cdc-wch32v307-none-os"
+          - "examples/ble-hid-ch32v208"
+          - "examples/ble-usb-cdc-ch58x"
+          - "examples/ble-hid-ch59x"
+          - "examples/usb-pd-ch32x035"
+          - "examples/zephyr-blink"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: "recursive"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: Install dependencies
+        run: |
+          pip install -U https://github.com/platformio/platformio/archive/develop.zip
+          pio pkg install --global --platform symlink://.
+      - name: Build examples
+        run: |
+          pio run -d ${{ matrix.example }}
