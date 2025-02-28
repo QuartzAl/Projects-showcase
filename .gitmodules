@@ -1,0 +1,9 @@
+[submodule "Nixie Tube Driver/cnixxi/firmware/ch32fun"]
+	path = Nixie Tube Driver/cnixxi/firmware/ch32fun
+	url = https://github.com/cnlohr/ch32fun
+[submodule "Tetris Challenge Console/Tetris-UAS-Menu"]
+	path = Tetris Challenge Console/Tetris-UAS-Menu
+	url = https://github.com/QuartzAl/Tetris-UAS-Menu
+[submodule "Tetris Challenge Console/Tetris-UAS-Mikro"]
+	path = Tetris Challenge Console/Tetris-UAS-Mikro
+	url = https://github.com/QuartzAl/Tetris-UAS-Mikro
