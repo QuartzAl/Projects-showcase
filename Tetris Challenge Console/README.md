@@ -2,6 +2,8 @@
 
 This project presents a Tetris game console built using an Arduino Nano, MAX7219 dot matrix display, TM1637 seven-segment module, and tactile switches. It features a modular, daisy-chainable design for multiplayer functionality and various game modes.
 
+**(Further project description is available in Tetris-UAS-Mikro)**
+
 ## Features
 
 * **Arduino Nano Based:** Utilizes the Arduino Nano for game logic and control.
